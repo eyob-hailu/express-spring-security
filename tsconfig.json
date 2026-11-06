@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "declaration": true,           // Critical: Generates the .d.ts files for other developers
+    "strict": true,
+    "experimentalDecorators": true, // Critical: Allows @PreAuthorize style decorators
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"]
+}
