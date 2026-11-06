@@ -1,5 +1,6 @@
 // src/filters/SecurityFilterChain.ts
 import { Application, RequestHandler } from 'express';
+import cors from 'cors'; // <-- 1. Import the standard Express cors package
 import { SecurityContextHolder } from './SecurityContextHolder';
 import { JwtAuthenticationFilter } from './JwtAuthenticationFilter';
 
@@ -16,8 +17,17 @@ export class SecurityFilterChain {
   }
 
   /**
+   * Adds Spring-style CORS configuration.
+   * Guaranteed to be applied securely BEFORE the authentication filter.
+   */
+  public cors(options?: cors.CorsOptions): this {
+    this.preFilters.push(cors(options));
+    return this;
+  }
+
+  /**
    * Registers custom middleware that should run BEFORE authentication
-   * (e.g., CORS, helmet, body-parser).
+   * (e.g., helmet, body-parser).
    */
   public addPreFilter(filter: RequestHandler): this {
     this.preFilters.push(filter);
@@ -40,7 +50,7 @@ export class SecurityFilterChain {
     // 1. MUST GO FIRST: Initialize the global context bubble for the request
     this.app.use(SecurityContextHolder.initialize());
 
-    // 2. Apply any pre-authentication filters (like CORS)
+    // 2. Apply any pre-authentication filters (like CORS and express.json)
     this.preFilters.forEach(filter => this.app.use(filter));
 
     // 3. Apply the JWT Filter to intercept and authenticate the request
