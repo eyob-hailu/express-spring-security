@@ -1,12 +1,22 @@
 {
   "name": "express-spring-security",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Spring Security architecture for Express & TypeScript applications",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsx src/run-tests.ts",
+    "start": "tsx src/test.ts",
+    "build": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "express",
+    "spring-security",
+    "security",
+    "jwt",
+    "rbac",
+    "typescript"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
