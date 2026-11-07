@@ -80,12 +80,14 @@ export class JwtAuthenticationFilter {
 
       // 2. If no token is provided, proceed as Anonymous (Unauthenticated).
       // Downstream path matchers or @PreAuthorize decorators will enforce access.
-      if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      const bearerRegex = /^Bearer\s+(.+)$/i;
+      const match = authHeader ? authHeader.match(bearerRegex) : null;
+      if (!match) {
         return next();
       }
 
-      // 3. Extract the token string (remove "Bearer " prefix)
-      const token = authHeader.substring(7);
+      // 3. Extract the token string (case-insensitive Bearer prefix, trimmed)
+      const token = match[1].trim();
 
       try {
         let keyToVerify: string | Buffer;
@@ -118,12 +120,20 @@ export class JwtAuthenticationFilter {
         // 6. Verify signature and claims (RS256, HS256, etc.)
         const decodedPayload = jwt.verify(token, keyToVerify, verifyOptions) as any;
 
-        // 7. Map payload to standard UserDetails interface
+        // 7. Map payload to standard UserDetails interface (normalizing roles/authorities)
+        const rawRoles =
+          decodedPayload.roles ||
+          decodedPayload.role ||
+          decodedPayload.authorities ||
+          (decodedPayload.realm_access && decodedPayload.realm_access.roles) ||
+          [];
+        const normalizedRoles = Array.isArray(rawRoles) ? rawRoles : [rawRoles];
+
         const userDetails: UserDetails = {
+          ...decodedPayload,
           id: decodedPayload.sub || decodedPayload.id,
-          username: decodedPayload.username || decodedPayload.email || 'unknown',
-          roles: decodedPayload.roles || [],
-          ...decodedPayload
+          username: decodedPayload.username || decodedPayload.email || decodedPayload.preferred_username || 'unknown',
+          roles: normalizedRoles
         };
 
         // 8. Save the user into the thread-safe SecurityContextHolder

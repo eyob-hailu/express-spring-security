@@ -4,6 +4,21 @@
   "description": "Spring Security architecture for Express & TypeScript applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eyob-hailu/express-spring-security.git"
+  },
   "scripts": {
     "test": "tsx src/run-tests.ts",
     "start": "tsx src/test.ts",

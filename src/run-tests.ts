@@ -76,13 +76,16 @@ function simulateRequest(
   targetApp: any,
   method: string,
   path: string,
-  token?: string
+  token?: string,
+  authHeaderOverride?: string
 ): Promise<{ status: number; body: any }> {
   return new Promise((resolve) => {
     const headers: Record<string, string> = {
       host: 'localhost'
     };
-    if (token) {
+    if (authHeaderOverride !== undefined) {
+      headers['authorization'] = authHeaderOverride;
+    } else if (token) {
       headers['authorization'] = `Bearer ${token}`;
     }
 
@@ -390,11 +393,27 @@ async function run() {
       path: '/api/catchall-protected',
       token: undefined,
       expectedStatus: 401
+    },
+    {
+      name: '28. [Bearer Case-Insensitivity] Lowercase "bearer <token>" is accepted -> 200 OK',
+      method: 'GET',
+      path: '/api/catchall-protected',
+      token: undefined,
+      authHeaderOverride: `bearer ${userToken}`,
+      expectedStatus: 200
+    },
+    {
+      name: '29. [Authorities/Roles Mapping] Token with authorities claim is normalized to roles -> 200 OK',
+      method: 'GET',
+      path: '/api/admin/system-stats',
+      token: undefined,
+      authHeaderOverride: `Bearer ${jwt.sign({ id: 55, username: 'spring_user', authorities: ['ROLE_ADMIN'] }, SECRET_KEY)}`,
+      expectedStatus: 200
     }
   ];
 
   for (const tc of testCases) {
-    const res = await simulateRequest(app, tc.method, tc.path, tc.token);
+    const res = await simulateRequest(app, tc.method, tc.path, tc.token, (tc as any).authHeaderOverride);
     assert(res.status === tc.expectedStatus, tc.name, { expected: tc.expectedStatus, actual: res.status, body: res.body });
   }
 
