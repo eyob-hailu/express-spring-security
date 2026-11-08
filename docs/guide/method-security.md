@@ -4,18 +4,51 @@ The `@PreAuthorize` decorator allows you to enforce role-based access control or
 
 ## Auto-Bound `this` Context
 
-In standard Express, passing a class method as a route handler causes Express to lose the class `this` context:
+In standard Express, passing an unbound class method directly into a route handler causes Express to lose the class `this` context at runtime.
+
+### ❌ Without `@PreAuthorize` (Standard Express forces manual `.bind`)
 
 ```typescript
-// Standard Express loses `this`:
-app.get('/users', controller.getUsers); // ❌ `this` is undefined inside getUsers!
+class UserController {
+  private service = new UserService();
+
+  // Plain method (NO decorator):
+  public getUsers(req: Request, res: Response) {
+    this.service.findAll(); // Needs `this` to access class properties
+  }
+}
+
+const controller = new UserController();
+
+// ❌ If you pass the method directly, `this` is undefined inside getUsers and crashes!
+app.get('/users', controller.getUsers);
+
+// 😩 Standard Express FORCES you to manually bind every route:
+app.get('/users', controller.getUsers.bind(controller));
+// or wrap in an arrow function:
+app.get('/users', (req, res) => controller.getUsers(req, res));
 ```
 
-`@PreAuthorize` automatically binds `this` to the controller instance, allowing clean route registration:
+---
+
+### ✅ With `@PreAuthorize` (Automatic Binding)
+
+When you decorate a controller method with `@PreAuthorize`, the decorator **automatically binds `this` to the instance** under the hood. You no longer need manual `.bind()` or arrow wrappers:
 
 ```typescript
-// With @PreAuthorize:
-app.get('/users', controller.getUsers); // ✅ `this` is preserved automatically!
+class UserController {
+  private service = new UserService();
+
+  @PreAuthorize('USER') // 👈 Automatically binds `this` to the instance!
+  public getUsers(req: Request, res: Response) {
+    this.service.findAll(); // ✅ `this` is always preserved!
+  }
+}
+
+const controller = new UserController();
+
+// 🚀 Clean & natural route registration (no .bind needed!):
+app.get('/users', controller.getUsers);
 ```
 
 ---

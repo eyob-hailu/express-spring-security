@@ -27,6 +27,10 @@ Thumbs.db
 coverage/
 .nyc_output/
 
+# VitePress cache and build
+docs/.vitepress/dist
+docs/.vitepress/cache
+
 # Editor directories and files
 .idea/
 .vscode/
