@@ -35,7 +35,7 @@
     "rbac",
     "typescript"
   ],
-  "author": "",
+  "author": "Eyob Hailu",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
