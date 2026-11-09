@@ -74,6 +74,7 @@ html.dark .legend-text {
 }
 
 /* Brand Logo Styling */
+<<<<<<< HEAD
 .VPNavBarTitle .logo {
   height: 28px;
   width: auto;
@@ -86,8 +87,21 @@ html.dark .legend-text {
   height: auto;
   border-radius: 16px;
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+=======
+.VPHomeHero .image-src {
+  border-radius: 16px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+  max-width: 480px;
+>>>>>>> 10ef3005e342e8fbe02397569e5185d1c5739e52
 }
 
 html.dark .VPHomeHero .image-src {
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
+<<<<<<< HEAD
+=======
+
+.VPNavBarTitle .logo {
+  border-radius: 4px;
+}
+>>>>>>> 10ef3005e342e8fbe02397569e5185d1c5739e52

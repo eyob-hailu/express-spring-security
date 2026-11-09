@@ -1,5 +1,9 @@
 <p align="center">
+<<<<<<< HEAD
   <img src="docs/public/logo.png" alt="Express Spring Security Logo" width="180" style="max-width: 100%;" />
+=======
+  <img src="docs/public/logo.jpg" alt="Express Spring Security Logo" width="640" style="border-radius: 14px; max-width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
+>>>>>>> 10ef3005e342e8fbe02397569e5185d1c5739e52
 </p>
 
 # 🍃 Express Spring Security
