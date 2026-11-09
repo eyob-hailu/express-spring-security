@@ -1,3 +1,7 @@
+---
+pageClass: wide-page
+---
+
 # What is Express Spring Security?
 
 **Express Spring Security** brings the beloved, battle-tested design patterns of **Spring Security 6** directly to Express & TypeScript applications — without requiring the NestJS monolith.
@@ -22,3 +26,13 @@ Express Spring Security bridges this gap with pure TypeScript:
 * **Universal `@PreAuthorize`:** Works on both legacy Stage 2 decorators (`experimentalDecorators: true`) and modern TypeScript 5.0+ Stage 3 TC39 standard decorators, with automatic `this` binding and dynamic SpEL-style expression predicates.
 * **Unopinionated Authentication:** A pluggable `PasswordEncoder` contract (`encode` & `matches`) giving you 100% freedom to use bcrypt, argon2, or your preferred hashing library with zero forced dependencies.
 * **Pluggable Exception Handling:** Full separation of concerns between 401 Unauthorized (`AuthenticationEntryPoint`) and 403 Forbidden (`AccessDeniedHandler`).
+
+---
+
+## 🔄 Request Lifecycle Architecture
+
+The following diagram illustrates how every request flows through the `SecurityFilterChain`, ambient `SecurityContextHolder`, method security, and exception handlers:
+
+<RequestLifecycleDiagram />
+
+To learn more about each stage, see complete configuration examples, or view the full breakdown, check out the [Request Lifecycle Architecture](/guide/architecture) and the [SecurityFilterChain Pipeline Guide](/guide/security-filter-chain).

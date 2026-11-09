@@ -1,0 +1,74 @@
+/* Custom theme overrides */
+
+/* Allow wide layout on pages with wide-page class or when diagram is present */
+.wide-page .content-container,
+.VPDoc:has(.request-lifecycle-container) .content-container {
+  max-width: 1040px !important;
+}
+
+/* Ensure Request Lifecycle Diagram has ultra-sharp contrast and visible surfaces in Dark Mode */
+html.dark .request-lifecycle-container {
+  background-color: #171922 !important;
+  border: 1.5px solid #2e3547 !important;
+  box-shadow: 0 16px 48px -6px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .diagram-header {
+  background: linear-gradient(180deg, #252a38 0%, #1c202d 100%) !important;
+  border-bottom: 1.5px solid #2e3547 !important;
+}
+
+html.dark .header-title,
+html.dark .title-text {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+}
+
+html.dark .header-badge {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  color: #34d399 !important;
+  border: 1.5px solid rgba(52, 211, 153, 0.5) !important;
+}
+
+html.dark .fullscreen-toggle-btn {
+  background-color: #242938 !important;
+  color: #f1f5f9 !important;
+  border-color: #3b4359 !important;
+}
+
+html.dark .fullscreen-toggle-btn:hover {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+}
+
+html.dark .svg-wrapper {
+  background: radial-gradient(ellipse at top, #161925 0%, #0d0f17 100%) !important;
+}
+
+html.dark .svg-bg {
+  fill: transparent !important;
+}
+
+html.dark .badge-box-red {
+  fill: #221215 !important;
+  stroke: #ef4444 !important;
+}
+
+html.dark .badge-box-green {
+  fill: #0c1f17 !important;
+  stroke: #10b981 !important;
+}
+
+html.dark .flow-line {
+  stroke: #94a3b8 !important;
+}
+
+html.dark .arrow-marker {
+  fill: #94a3b8 !important;
+}
+
+html.dark .legend-text {
+  fill: #e2e8f0 !important;
+}

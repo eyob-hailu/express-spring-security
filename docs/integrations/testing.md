@@ -1,6 +1,6 @@
-# Recipe: Testing Protected Endpoints
+# Testing Protected Endpoints
 
-This recipe shows how to write clean integration tests for your Express controllers with tools like `supertest`, `vitest`, or `jest`.
+This guide shows how to write clean integration tests for your Express controllers with tools like `supertest`, `vitest`, or `jest`.
 
 ## 1. Helper: Minting Test Tokens
 

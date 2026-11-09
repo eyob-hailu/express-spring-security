@@ -13,7 +13,8 @@ export default defineConfig({
 
     nav: [
       { text: 'Guide', link: '/guide/what-is-it' },
-      { text: 'Recipes', link: '/recipes/prisma-database' },
+      { text: 'Architecture', link: '/guide/architecture' },
+      { text: 'Integrations', link: '/integrations/prisma-database' },
       { text: 'API Reference', link: '/reference/api' },
       {
         text: 'v1.0.0',
@@ -38,6 +39,7 @@ export default defineConfig({
         text: 'Architecture & Features',
         collapsed: false,
         items: [
+          { text: 'Request Lifecycle Architecture', link: '/guide/architecture' },
           { text: 'SecurityFilterChain Pipeline', link: '/guide/security-filter-chain' },
           { text: 'SecurityContextHolder (Ambient Context)', link: '/guide/ambient-context' },
           { text: 'Method Security (@PreAuthorize)', link: '/guide/method-security' },
@@ -46,12 +48,12 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Integration Recipes',
+        text: 'Integration Guides',
         collapsed: false,
         items: [
-          { text: 'Database RBAC (Prisma / TypeORM)', link: '/recipes/prisma-database' },
-          { text: 'Enterprise JWKS (Auth0 / Okta / Keycloak)', link: '/recipes/auth0-jwks' },
-          { text: 'Testing Protected Endpoints', link: '/recipes/testing' }
+          { text: 'Database RBAC (Prisma / TypeORM)', link: '/integrations/prisma-database' },
+          { text: 'Enterprise JWKS (Auth0 / Okta / Keycloak)', link: '/integrations/auth0-jwks' },
+          { text: 'Testing Protected Endpoints', link: '/integrations/testing' }
         ]
       },
       {

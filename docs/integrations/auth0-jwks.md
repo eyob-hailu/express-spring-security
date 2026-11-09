@@ -1,6 +1,6 @@
-# Recipe: Enterprise JWKS (Auth0 / Okta / Keycloak)
+# Enterprise JWKS Integration (Auth0 / Okta / Keycloak)
 
-This recipe demonstrates how to verify JWTs issued by cloud Identity Providers (IDPs) using dynamic JSON Web Key Sets (JWKS) with automatic key rotation.
+This guide demonstrates how to verify JWTs issued by cloud Identity Providers (IDPs) using dynamic JSON Web Key Sets (JWKS) with automatic key rotation.
 
 ## 1. Install JWKS Client
 

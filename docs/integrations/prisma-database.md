@@ -1,6 +1,6 @@
-# Recipe: Database RBAC with Prisma
+# Database RBAC with Prisma
 
-This recipe demonstrates how to connect your SQL database (PostgreSQL, MySQL, SQLite) to **Express Spring Security** using **Prisma ORM**.
+This guide demonstrates how to connect your SQL database (PostgreSQL, MySQL, SQLite) to **Express Spring Security** using **Prisma ORM**.
 
 ## 1. Implement `UserDetailsService`
 

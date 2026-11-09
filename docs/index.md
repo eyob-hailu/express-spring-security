@@ -34,7 +34,7 @@ features:
     details: Supports symmetric HMAC secrets (HS256), RSA/ECDSA public PEM keys (RS256, ES256), and dynamic JWKS key resolvers for Auth0, Okta, and Keycloak.
 ---
 
-<div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+<div style="text-align: center; margin-top: 48px; margin-bottom: 36px;">
   <p style="font-size: 1.1rem; color: var(--vp-c-text-2);">
     Zero Framework Lock-in • Works with Express 5.x • Pure TypeScript 5.0+
   </p>
