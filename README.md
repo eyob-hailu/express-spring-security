@@ -10,7 +10,7 @@
 [![Express](https://img.shields.io/badge/Express-5.x-green.svg)](https://expressjs.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-339933.svg)](https://nodejs.org/)
 [![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)]()
-[![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](https://opensource.org/licenses/ISC)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
@@ -472,4 +472,4 @@ npm start
 
 ## 📄 License
 
-ISC © [Eyob Hailu](https://github.com/eyob-hailu)
+MIT © [Eyob Hailu](https://github.com/eyob-hailu)
