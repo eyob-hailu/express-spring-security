@@ -7,9 +7,13 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
 
+  head: [
+    ['link', { rel: 'icon', type: 'image/png', href: '/express-spring-security/cropped_logo.png' }]
+  ],
+
   themeConfig: {
-    siteTitle: '🍃 Express Spring Security',
-    logo: undefined,
+    siteTitle: 'Express Spring Security',
+    logo: '/cropped_logo.png',
 
     nav: [
       { text: 'Guide', link: '/guide/what-is-it' },

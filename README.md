@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/public/logo.png" alt="Express Spring Security Logo" width="180" style="max-width: 100%;" />
+</p>
+
 # 🍃 Express Spring Security
 
 > **Enterprise-grade Spring Security 6 architecture for Express & TypeScript applications — without the NestJS monolith.**

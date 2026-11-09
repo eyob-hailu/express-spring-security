@@ -72,3 +72,22 @@ html.dark .arrow-marker {
 html.dark .legend-text {
   fill: #e2e8f0 !important;
 }
+
+/* Brand Logo Styling */
+.VPNavBarTitle .logo {
+  height: 28px;
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.VPHomeHero .image-src {
+  max-width: 440px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+}
+
+html.dark .VPHomeHero .image-src {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
