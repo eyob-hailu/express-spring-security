@@ -8,7 +8,8 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/png', href: '/express-spring-security/croppedlogo.png' }]
+    ['link', { rel: 'icon', type: 'image/png', href: '/express-spring-security/croppedlogo.png' }],
+    ['meta', { name: 'keywords', content: 'express, spring-security, rbac, typescript, jwt, authentication, middleware, decorators, passport-alternative, enterprise, security' }]
   ],
 
   themeConfig: {
