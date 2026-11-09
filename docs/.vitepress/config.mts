@@ -8,20 +8,12 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
-<<<<<<< HEAD
-    ['link', { rel: 'icon', type: 'image/png', href: '/express-spring-security/cropped_logo.png' }]
-=======
-    ['link', { rel: 'icon', type: 'image/jpeg', href: '/express-spring-security/logo.jpg' }]
->>>>>>> 10ef3005e342e8fbe02397569e5185d1c5739e52
+    ['link', { rel: 'icon', type: 'image/png', href: '/express-spring-security/croppedlogo.png' }]
   ],
 
   themeConfig: {
     siteTitle: 'Express Spring Security',
-<<<<<<< HEAD
-    logo: '/cropped_logo.png',
-=======
-    logo: '/logo.jpg',
->>>>>>> 10ef3005e342e8fbe02397569e5185d1c5739e52
+    logo: '/croppedlogo.png',
 
     nav: [
       { text: 'Guide', link: '/guide/what-is-it' },
