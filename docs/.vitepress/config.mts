@@ -9,7 +9,19 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/express-spring-security/croppedlogo.png' }],
-    ['meta', { name: 'keywords', content: 'express, spring-security, rbac, typescript, jwt, authentication, middleware, decorators, passport-alternative, enterprise, security' }]
+    ['meta', { name: 'keywords', content: 'express, spring-security, rbac, typescript, jwt, authentication, middleware, decorators, passport-alternative, enterprise, security' }],
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtm.js?id=GTM-5V7HRDBH' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'GTM-5V7HRDBH');`
+    ]
   ],
 
   themeConfig: {
