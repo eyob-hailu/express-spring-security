@@ -1,20 +1,27 @@
 <p align="center">
-  <img src="docs/public/logo.jpg" alt="Express Spring Security Logo" width="640" style="border-radius: 14px; max-width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
+  <a href="https://eyob-hailu.github.io/express-spring-security/">
+    <img src="docs/public/croppedlogo.png" alt="Express Spring Security Logo" width="110" />
+  </a>
 </p>
 
-# Express Spring Security
+<h1 align="center">Express Spring Security</h1>
 
-> **Enterprise-grade Spring Security 6 architecture for Express & TypeScript applications — without the NestJS monolith.**
->
-> 📖 **Interactive Documentation & Visual Architecture Deep-Dive:**  
-> 👉 **[https://eyob-hailu.github.io/express-spring-security/](https://eyob-hailu.github.io/express-spring-security/)**
+<p align="center">
+  <strong>Enterprise-grade Spring Security 6 architecture for Express & TypeScript applications — without the NestJS monolith.</strong>
+</p>
 
-[![npm version](https://img.shields.io/npm/v/express-spring-security.svg)](https://www.npmjs.com/package/express-spring-security)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
-[![Express](https://img.shields.io/badge/Express-5.x-green.svg)](https://expressjs.com/)
-[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-339933.svg)](https://nodejs.org/)
-[![Tests](https://img.shields.io/badge/Tests-29%2F29%20Passing-brightgreen.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <a href="https://eyob-hailu.github.io/express-spring-security/"><strong>📖 Interactive Documentation & Visual Architecture Deep-Dive →</strong></a>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/express-spring-security"><img src="https://img.shields.io/npm/v/express-spring-security.svg" alt="npm version" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.0+-blue.svg" alt="TypeScript" /></a>
+  <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/Express-5.x-green.svg" alt="Express" /></a>
+  <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-%3E%3D18.0.0-339933.svg" alt="Node.js" /></a>
+  <img src="https://img.shields.io/badge/Tests-29%2F29%20Passing-brightgreen.svg" alt="Tests" />
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT" /></a>
+</p>
 
 ---
 
