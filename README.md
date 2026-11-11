@@ -18,6 +18,29 @@
 
 ---
 
+## 📑 Table of Contents
+
+* [💡 Why Express Spring Security?](#-why-express-spring-security)
+* [🔄 Request Lifecycle Architecture](#-request-lifecycle-architecture)
+* [📦 Installation](#-installation)
+* [🚀 Quick Start (Complete Example)](#-quick-start-complete-runnable-example)
+* [🧩 Core Architecture & Features](#-core-architecture--features)
+  * [1. Ambient Context (`SecurityContextHolder`)](#1-ambient-security-context-securitycontextholder)
+  * [2. Method Security (`@PreAuthorize`)](#2-method-security-preauthorize)
+  * [3. Functional Route Helpers (No Classes)](#3-functional-route-helpers-no-classes-required)
+  * [4. Pluggable PasswordEncoder & Database RBAC (Prisma)](#4-pluggable-authentication-engine-passwordencoder--userdetailsservice)
+  * [5. Enterprise Asymmetric Verification (RS256 & JWKS)](#5-enterprise-asymmetric-verification-rs256--jwks)
+  * [6. Pluggable Exception Handling (401 vs 403)](#6-pluggable-exception-handling-401-vs-403)
+  * [7. Ant Path Matching & Role Conventions](#7-ant-path-matching--role-conventions)
+* [📊 Feature Comparison Matrix](#-feature-comparison-matrix)
+* [⚙️ TypeScript Configuration](#️-typescript-configuration)
+* [📚 Complete API Reference](#-api-reference)
+* [🤝 Contributing & Source Tests](#-contributing--source-tests)
+* [⭐ Support & Community](#-support--community)
+* [📄 License](#-license)
+
+---
+
 ## 💡 Why Express Spring Security?
 
 In the Node.js / TypeScript ecosystem, developers needing structured, enterprise-ready authentication and Role-Based Access Control (RBAC) face a tough choice:
@@ -35,29 +58,6 @@ In the Node.js / TypeScript ecosystem, developers needing structured, enterprise
 * 🚦 **Pluggable Exception Handling:** Full separation of concerns between 401 Unauthorized (`AuthenticationEntryPoint`) and 403 Forbidden (`AccessDeniedHandler`).
 * 🔑 **Pluggable Authentication Engine:** Unopinionated `PasswordEncoder` contract — you decide your hashing library (`bcrypt`, `argon2`, etc.) with zero forced dependencies — paired with `UserDetailsService`, `InMemoryUserDetailsManager`, and `AuthenticationManager`.
 * 🏢 **Enterprise JWT & JWKS:** Symmetric secrets (`HS256`), Asymmetric keys (`RS256`, `ES256`), and dynamic JWKS key resolvers for Auth0, Okta, and Keycloak.
-
----
-
-## 📑 Table of Contents
-
-* [💡 Why Express Spring Security?](#-why-express-spring-security)
-* [🔄 Request Lifecycle Architecture](#-request-lifecycle-architecture)
-* [📦 Installation](#-installation)
-* [🚀 Quick Start (Runnable Example)](#-quick-start-complete-runnable-example)
-* [🧩 Core Architecture & Features](#-core-architecture--features)
-  * [1. Ambient Context (`SecurityContextHolder`)](#1-ambient-security-context-securitycontextholder)
-  * [2. Method Security (`@PreAuthorize`)](#2-method-security-preauthorize)
-  * [3. Functional Route Helpers (No Classes)](#3-functional-route-helpers-no-classes-required)
-  * [4. Pluggable PasswordEncoder & Database RBAC (Prisma)](#4-pluggable-authentication-engine-passwordencoder--userdetailsservice)
-  * [5. Enterprise Asymmetric Verification (RS256 & JWKS)](#5-enterprise-asymmetric-verification-rs256--jwks)
-  * [6. Pluggable Exception Handling (401 vs 403)](#6-pluggable-exception-handling-401-vs-403)
-  * [7. Ant Path Matching & Role Conventions](#7-ant-path-matching--role-conventions)
-* [📊 Feature Comparison Matrix](#-feature-comparison-matrix)
-* [⚙️ TypeScript Configuration](#️-typescript-configuration)
-* [📚 Complete API Reference](#-api-reference)
-* [🧪 Testing & Local Development](#-testing--local-development)
-* [⭐ Support & Community](#-support--community)
-* [📄 License](#-license)
 
 ---
 
@@ -485,19 +485,18 @@ new SecurityFilterChain(app)
 
 ---
 
-## 🧪 Testing & Local Development
+## 🤝 Contributing & Source Tests
 
-For developers contributing to or testing the library locally, the repository includes an in-memory integration test suite covering path matching, role normalization, token expiration, asymmetric key verification, dynamic JWKS resolution, and decorator behaviors:
+The test suite is maintained in the open-source GitHub repository to verify pull requests and CI changes (tests are excluded from the npm package to keep installation sizes minimal):
 
 ```bash
-# Run the complete test suite (29 tests)
+# Clone the repository
+git clone https://github.com/eyob-hailu/express-spring-security.git
+cd express-spring-security
+
+# Install development dependencies & run the 29-test suite
+npm install
 npm test
-
-# Build compiled JavaScript & TypeScript definitions
-npm run build
-
-# Start the local example sandbox server
-npm start
 ```
 
 ---
