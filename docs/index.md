@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "Express Spring Security"
   text: "Enterprise Spring Security 6 for Express & TypeScript"
-  tagline: "ThreadLocal-style ambient context, fluent Ant-path filter chains, and universal @PreAuthorize decorators — without the NestJS monolith."
+  tagline: "Enterprise-grade authentication, fluent URL authorization, and declarative method security for modern Node.js."
   image:
     src: /logo.jpg
     alt: Express Spring Security Logo
