@@ -5,11 +5,15 @@
 # Express Spring Security
 
 > **Enterprise-grade Spring Security 6 architecture for Express & TypeScript applications — without the NestJS monolith.**
+>
+> 📖 **Interactive Documentation & Visual Architecture Deep-Dive:**  
+> 👉 **[https://eyob-hailu.github.io/express-spring-security/](https://eyob-hailu.github.io/express-spring-security/)**
 
+[![npm version](https://img.shields.io/npm/v/express-spring-security.svg)](https://www.npmjs.com/package/express-spring-security)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 [![Express](https://img.shields.io/badge/Express-5.x-green.svg)](https://expressjs.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-339933.svg)](https://nodejs.org/)
-[![Tests](https://img.shields.io/badge/Tests-Passing-brightgreen.svg)]()
+[![Tests](https://img.shields.io/badge/Tests-29%2F29%20Passing-brightgreen.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ---
@@ -31,6 +35,29 @@ In the Node.js / TypeScript ecosystem, developers needing structured, enterprise
 * 🚦 **Pluggable Exception Handling:** Full separation of concerns between 401 Unauthorized (`AuthenticationEntryPoint`) and 403 Forbidden (`AccessDeniedHandler`).
 * 🔑 **Pluggable Authentication Engine:** Unopinionated `PasswordEncoder` contract — you decide your hashing library (`bcrypt`, `argon2`, etc.) with zero forced dependencies — paired with `UserDetailsService`, `InMemoryUserDetailsManager`, and `AuthenticationManager`.
 * 🏢 **Enterprise JWT & JWKS:** Symmetric secrets (`HS256`), Asymmetric keys (`RS256`, `ES256`), and dynamic JWKS key resolvers for Auth0, Okta, and Keycloak.
+
+---
+
+## 📑 Table of Contents
+
+* [💡 Why Express Spring Security?](#-why-express-spring-security)
+* [🔄 Request Lifecycle Architecture](#-request-lifecycle-architecture)
+* [📦 Installation](#-installation)
+* [🚀 Quick Start (Runnable Example)](#-quick-start-complete-runnable-example)
+* [🧩 Core Architecture & Features](#-core-architecture--features)
+  * [1. Ambient Context (`SecurityContextHolder`)](#1-ambient-security-context-securitycontextholder)
+  * [2. Method Security (`@PreAuthorize`)](#2-method-security-preauthorize)
+  * [3. Functional Route Helpers (No Classes)](#3-functional-route-helpers-no-classes-required)
+  * [4. Pluggable PasswordEncoder & Database RBAC (Prisma)](#4-pluggable-authentication-engine-passwordencoder--userdetailsservice)
+  * [5. Enterprise Asymmetric Verification (RS256 & JWKS)](#5-enterprise-asymmetric-verification-rs256--jwks)
+  * [6. Pluggable Exception Handling (401 vs 403)](#6-pluggable-exception-handling-401-vs-403)
+  * [7. Ant Path Matching & Role Conventions](#7-ant-path-matching--role-conventions)
+* [📊 Feature Comparison Matrix](#-feature-comparison-matrix)
+* [⚙️ TypeScript Configuration](#️-typescript-configuration)
+* [📚 Complete API Reference](#-api-reference)
+* [🧪 Testing & Local Development](#-testing--local-development)
+* [⭐ Support & Community](#-support--community)
+* [📄 License](#-license)
 
 ---
 
@@ -59,9 +86,14 @@ flowchart TD
 ## 📦 Installation
 
 ```bash
-npm install express-spring-security jsonwebtoken cors
-npm install -D @types/jsonwebtoken @types/cors
+# Core package (built for Express 5.x)
+npm install express-spring-security express
+
+# Development TypeScript types
+npm install -D typescript @types/express @types/node
 ```
+
+> **Note:** `express-spring-security` ships with pre-bundled TypeScript type declarations (`.d.ts`) and includes required dependencies (`jsonwebtoken`, `cors`) out of the box.
 
 ---
 
@@ -453,20 +485,30 @@ new SecurityFilterChain(app)
 
 ---
 
-## 🧪 Testing & Development
+## 🧪 Testing & Local Development
 
-The repository includes a comprehensive 100% in-memory integration test suite covering path matching, role normalization, token expiration, asymmetric key verification, dynamic JWKS resolution, and decorator behaviors:
+For developers contributing to or testing the library locally, the repository includes an in-memory integration test suite covering path matching, role normalization, token expiration, asymmetric key verification, dynamic JWKS resolution, and decorator behaviors:
 
 ```bash
-# Run the test suite
+# Run the complete test suite (29 tests)
 npm test
 
 # Build compiled JavaScript & TypeScript definitions
 npm run build
 
-# Start the interactive test server
+# Start the local example sandbox server
 npm start
 ```
+
+---
+
+## ⭐ Support & Community
+
+If this library saves your team time, simplifies your security architecture, or replaces custom authorization boilerplate:
+
+* **Star the repository on GitHub:** [eyob-hailu/express-spring-security](https://github.com/eyob-hailu/express-spring-security) — it helps more developers discover the project!
+* **Report bugs or request features:** Open an issue on our [GitHub Issues](https://github.com/eyob-hailu/express-spring-security/issues) page.
+* **Read the full documentation:** Explore interactive guides and deep-dives at [https://eyob-hailu.github.io/express-spring-security/](https://eyob-hailu.github.io/express-spring-security/).
 
 ---
 
