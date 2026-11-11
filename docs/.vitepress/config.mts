@@ -6,10 +6,37 @@ export default defineConfig({
   base: '/express-spring-security/',
   cleanUrls: true,
   lastUpdated: true,
+  sitemap: {
+    hostname: 'https://eyob-hailu.github.io',
+    transformItems(items) {
+      return items.map((item) => ({
+        ...item,
+        url: item.url.startsWith('express-spring-security/')
+          ? item.url
+          : `express-spring-security/${item.url}`
+      }));
+    }
+  },
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/express-spring-security/croppedlogo.png' }],
     ['meta', { name: 'keywords', content: 'express, spring-security, rbac, typescript, jwt, authentication, middleware, decorators, passport-alternative, enterprise, security' }],
+    ['meta', { name: 'author', content: 'Eyob Hailu' }],
+
+    // OpenGraph (Social & Search Previews)
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'Express Spring Security — Enterprise Security for Express & TypeScript' }],
+    ['meta', { property: 'og:description', content: 'Enterprise-grade authentication, fluent URL authorization, and declarative method security for modern Node.js.' }],
+    ['meta', { property: 'og:image', content: 'https://eyob-hailu.github.io/express-spring-security/logo.jpg' }],
+    ['meta', { property: 'og:url', content: 'https://eyob-hailu.github.io/express-spring-security/' }],
+
+    // Twitter Cards
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'Express Spring Security' }],
+    ['meta', { name: 'twitter:description', content: 'Enterprise-grade Spring Security 6 architecture for Express & TypeScript applications.' }],
+    ['meta', { name: 'twitter:image', content: 'https://eyob-hailu.github.io/express-spring-security/logo.jpg' }],
+
+    // Google Tag
     [
       'script',
       { async: '', src: 'https://www.googletagmanager.com/gtm.js?id=GTM-5V7HRDBH' }
@@ -21,6 +48,30 @@ export default defineConfig({
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'GTM-5V7HRDBH');`
+    ],
+
+    // JSON-LD Structured Data for Google Rich Snippets
+    [
+      'script',
+      { type: 'application/ld+json' },
+      JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: 'Express Spring Security',
+        operatingSystem: 'Node.js',
+        applicationCategory: 'DeveloperApplication',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD'
+        },
+        author: {
+          '@type': 'Person',
+          name: 'Eyob Hailu',
+          url: 'https://github.com/eyob-hailu'
+        },
+        description: 'Enterprise-grade Spring Security architecture for Express & TypeScript applications.'
+      })
     ]
   ],
 
