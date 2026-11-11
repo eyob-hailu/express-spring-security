@@ -38,7 +38,10 @@ features:
 ---
 
 <div style="text-align: center; margin-top: 48px; margin-bottom: 36px;">
-  <p style="font-size: 1.1rem; color: var(--vp-c-text-2);">
-    Zero Framework Lock-in • Works with Express 5.x • Pure TypeScript 5.0+
+  <p style="font-size: 1.15rem; color: var(--vp-c-text-1); font-weight: 500;">
+    Created & Maintained by <a href="https://github.com/eyob-hailu" target="_blank" rel="noopener" style="color: var(--vp-c-brand-1); text-decoration: underline;"><strong>Eyob Hailu</strong></a>
+  </p>
+  <p style="font-size: 0.95rem; color: var(--vp-c-text-2); margin-top: 4px;">
+    Zero Framework Lock-in • Built for Express 5.x • Pure TypeScript 5.0+
   </p>
 </div>

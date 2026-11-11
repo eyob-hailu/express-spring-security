@@ -20,20 +20,23 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/express-spring-security/croppedlogo.png' }],
-    ['meta', { name: 'keywords', content: 'express, spring-security, rbac, typescript, jwt, authentication, middleware, decorators, passport-alternative, enterprise, security' }],
+    ['meta', { name: 'google-site-verification', content: 'jDLRKFnhzYEtecGW_Y5fVnbI8M957Rku-Zuc2uqfwuw' }],
+    ['meta', { name: 'keywords', content: 'express, spring-security, rbac, typescript, jwt, authentication, middleware, decorators, passport-alternative, enterprise, security, eyob hailu, eyob-hailu, eyob' }],
     ['meta', { name: 'author', content: 'Eyob Hailu' }],
+    ['meta', { name: 'creator', content: 'Eyob Hailu' }],
+    ['meta', { name: 'publisher', content: 'Eyob Hailu' }],
 
     // OpenGraph (Social & Search Previews)
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'Express Spring Security — Enterprise Security for Express & TypeScript' }],
-    ['meta', { property: 'og:description', content: 'Enterprise-grade authentication, fluent URL authorization, and declarative method security for modern Node.js.' }],
+    ['meta', { property: 'og:title', content: 'Express Spring Security — Created by Eyob Hailu' }],
+    ['meta', { property: 'og:description', content: 'Enterprise-grade authentication, fluent URL authorization, and declarative method security for modern Node.js & TypeScript. Created by Eyob Hailu.' }],
     ['meta', { property: 'og:image', content: 'https://eyob-hailu.github.io/express-spring-security/logo.jpg' }],
     ['meta', { property: 'og:url', content: 'https://eyob-hailu.github.io/express-spring-security/' }],
 
     // Twitter Cards
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:title', content: 'Express Spring Security' }],
-    ['meta', { name: 'twitter:description', content: 'Enterprise-grade Spring Security 6 architecture for Express & TypeScript applications.' }],
+    ['meta', { name: 'twitter:title', content: 'Express Spring Security by Eyob Hailu' }],
+    ['meta', { name: 'twitter:description', content: 'Enterprise-grade Spring Security 6 architecture for Express & TypeScript applications. Created by Eyob Hailu.' }],
     ['meta', { name: 'twitter:image', content: 'https://eyob-hailu.github.io/express-spring-security/logo.jpg' }],
 
     // Google Tag
@@ -70,7 +73,17 @@ gtag('config', 'GTM-5V7HRDBH');`
           name: 'Eyob Hailu',
           url: 'https://github.com/eyob-hailu'
         },
-        description: 'Enterprise-grade Spring Security architecture for Express & TypeScript applications.'
+        creator: {
+          '@type': 'Person',
+          name: 'Eyob Hailu',
+          url: 'https://github.com/eyob-hailu'
+        },
+        publisher: {
+          '@type': 'Person',
+          name: 'Eyob Hailu',
+          url: 'https://github.com/eyob-hailu'
+        },
+        description: 'Enterprise-grade Spring Security architecture for Express & TypeScript applications created by Eyob Hailu.'
       })
     ]
   ],
@@ -138,7 +151,7 @@ gtag('config', 'GTM-5V7HRDBH');`
     ],
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: 'Released under the MIT License • Created & Maintained by Eyob Hailu',
       copyright: 'Copyright © 2026 Eyob Hailu'
     },
 
